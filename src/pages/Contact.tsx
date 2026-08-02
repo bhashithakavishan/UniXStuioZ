@@ -41,18 +41,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[#080808] pt-32">
+    <div className="bg-background pt-32">
       {/* Hero */}
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-20">
         <motion.div
-          className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']"
+          className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           Get in Touch
         </motion.div>
         <motion.h1
-          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-[#f0ebe0]"
+          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-foreground"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -65,29 +65,29 @@ export default function Contact() {
         {/* Left info */}
         <FadeUp className="lg:col-span-2 flex flex-col gap-12">
           <div>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">Studio</div>
-            <p className="text-[#7a7267] text-sm leading-relaxed font-['Outfit'] font-light mb-2">47 West 25th Street, Suite 4F</p>
-            <p className="text-[#7a7267] text-sm font-['Outfit'] font-light">New York, NY 10010</p>
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit']">Studio</div>
+            <p className="text-muted text-sm leading-relaxed font-['Outfit'] font-light mb-2">47 West 25th Street, Suite 4F</p>
+            <p className="text-muted text-sm font-['Outfit'] font-light">New York, NY 10010</p>
           </div>
           <div>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">Contact</div>
-            <a href="mailto:hello@unixstudioz.com" className="block text-[#a09880] text-sm font-['Outfit'] font-light hover:text-[#c9a96e] transition-colors mb-2">
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit']">Contact</div>
+            <a href="mailto:hello@unixstudioz.com" className="block text-muted-alt text-sm font-['Outfit'] font-light hover:text-accent transition-colors mb-2">
               hello@unixstudioz.com
             </a>
-            <a href="tel:+12125550198" className="block text-[#a09880] text-sm font-['Outfit'] font-light hover:text-[#c9a96e] transition-colors">
+            <a href="tel:+12125550198" className="block text-muted-alt text-sm font-['Outfit'] font-light hover:text-accent transition-colors">
               +1 (212) 555 0198
             </a>
           </div>
           <div>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">Hours</div>
-            <div className="text-[#7a7267] text-sm font-['Outfit'] font-light leading-relaxed">
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit']">Hours</div>
+            <div className="text-muted text-sm font-['Outfit'] font-light leading-relaxed">
               <p>Mon – Fri: 10am – 6pm</p>
               <p>Weekends by appointment</p>
             </div>
           </div>
           <div>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">Response Time</div>
-            <p className="text-[#7a7267] text-sm font-['Outfit'] font-light leading-relaxed">
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit']">Response Time</div>
+            <p className="text-muted text-sm font-['Outfit'] font-light leading-relaxed">
               We respond to all inquiries within 48 hours. For urgent matters, please call us directly.
             </p>
           </div>
@@ -105,14 +105,14 @@ export default function Contact() {
         <FadeUp delay={0.15} className="lg:col-span-3">
           {submitted ? (
             <motion.div
-              className="h-full min-h-[400px] flex flex-col items-center justify-center gap-6 text-center border border-[#222220] p-16"
+              className="h-full min-h-[400px] flex flex-col items-center justify-center gap-6 text-center border border-border p-16"
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-[#c9a96e] font-['Fraunces'] text-6xl mb-4">✦</div>
-              <h2 className="font-['Fraunces'] font-light text-3xl text-[#f0ebe0]">Thank you</h2>
-              <p className="text-[#7a7267] text-sm font-['Outfit'] font-light max-w-sm leading-relaxed">
+              <div className="text-accent font-['Fraunces'] text-6xl mb-4">✦</div>
+              <h2 className="font-['Fraunces'] font-light text-3xl text-foreground">Thank you</h2>
+              <p className="text-muted text-sm font-['Outfit'] font-light max-w-sm leading-relaxed">
                 Your inquiry has been received. We'll review the details and be in touch within 48 hours.
               </p>
             </motion.div>
@@ -120,18 +120,18 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Full Name *</label>
+                  <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Full Name *</label>
                   <input
                     name="name"
                     value={form.name}
                     onChange={handleChange}
                     required
                     placeholder="Isabelle Fontaine"
-                    className="bg-transparent border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light placeholder:text-[#3a3830] focus:border-[#c9a96e] focus:outline-none transition-colors"
+                    className="bg-transparent border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light placeholder:text-muted-alt focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Email *</label>
+                  <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Email *</label>
                   <input
                     name="email"
                     type="email"
@@ -139,43 +139,43 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="isabelle@example.com"
-                    className="bg-transparent border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light placeholder:text-[#3a3830] focus:border-[#c9a96e] focus:outline-none transition-colors"
+                    className="bg-transparent border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light placeholder:text-muted-alt focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Phone</label>
+                  <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Phone</label>
                   <input
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="+1 (212) 555 0000"
-                    className="bg-transparent border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light placeholder:text-[#3a3830] focus:border-[#c9a96e] focus:outline-none transition-colors"
+                    className="bg-transparent border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light placeholder:text-muted-alt focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Event Date</label>
+                  <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Event Date</label>
                   <input
                     name="date"
                     type="date"
                     value={form.date}
                     onChange={handleChange}
-                    className="bg-transparent border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light focus:border-[#c9a96e] focus:outline-none transition-colors [color-scheme:dark]"
+                    className="bg-transparent border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light focus:border-accent focus:outline-none transition-colors [color-scheme:dark]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Session Type *</label>
+                  <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Session Type *</label>
                   <select
                     name="type"
                     value={form.type}
                     onChange={handleChange}
                     required
-                    className="bg-[#080808] border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light focus:border-[#c9a96e] focus:outline-none transition-colors appearance-none cursor-pointer"
+                    className="bg-background border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light focus:border-accent focus:outline-none transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled>Select type</option>
                     {SESSION_TYPES.map((t) => (
@@ -184,19 +184,19 @@ export default function Contact() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Location / Venue</label>
+                  <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Location / Venue</label>
                   <input
                     name="location"
                     value={form.location}
                     onChange={handleChange}
                     placeholder="Château de Vaux-le-Vicomte"
-                    className="bg-transparent border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light placeholder:text-[#3a3830] focus:border-[#c9a96e] focus:outline-none transition-colors"
+                    className="bg-transparent border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light placeholder:text-muted-alt focus:border-accent focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] font-['Outfit']">Tell Us About Your Vision *</label>
+                <label className="text-[9px] tracking-[0.4em] uppercase text-accent font-['Outfit']">Tell Us About Your Vision *</label>
                 <textarea
                   name="message"
                   value={form.message}
@@ -204,15 +204,15 @@ export default function Contact() {
                   required
                   rows={6}
                   placeholder="Share the vision for your session — the mood you have in mind, any references that inspire you, and anything that matters most..."
-                  className="bg-transparent border border-[#222220] px-4 py-3.5 text-[#f0ebe0] text-sm font-['Outfit'] font-light placeholder:text-[#3a3830] focus:border-[#c9a96e] focus:outline-none transition-colors resize-none"
+                  className="bg-transparent border border-border px-4 py-3.5 text-foreground text-sm font-['Outfit'] font-light placeholder:text-muted-alt focus:border-accent focus:outline-none transition-colors resize-none"
                 />
               </div>
 
               <div className="flex items-center justify-between gap-6 pt-2">
-                <p className="text-[#3a3830] text-xs font-['Outfit'] font-light">* Required fields</p>
+                <p className="text-muted-alt text-xs font-['Outfit'] font-light">* Required fields</p>
                 <motion.button
                   type="submit"
-                  className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-10 py-4 bg-[#c9a96e] text-[#080808] hover:bg-[#e8c98a] transition-colors duration-300 whitespace-nowrap"
+                  className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-10 py-4 bg-accent text-accent-foreground hover:bg-accent-soft transition-colors duration-300 whitespace-nowrap"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

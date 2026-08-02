@@ -47,11 +47,11 @@ const VALUES = [
 
 export default function About() {
   return (
-    <div className="bg-[#080808] pt-32">
+    <div className="bg-background pt-32">
       {/* Hero */}
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-24">
         <motion.div
-          className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']"
+          className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -59,7 +59,7 @@ export default function About() {
           Our Story
         </motion.div>
         <motion.h1
-          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-[#f0ebe0]"
+          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-foreground"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1 }}
@@ -71,13 +71,13 @@ export default function About() {
       {/* Story section */}
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-32 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         <FadeUp className="order-2 md:order-1 flex flex-col gap-6">
-          <p className="text-[#a09880] text-lg leading-relaxed font-['Outfit'] font-light">
+          <p className="text-muted-alt text-lg leading-relaxed font-['Outfit'] font-light">
             UniX StudioZ was founded in 2012 by Élise Moreau after she left a career in editorial photography to pursue something more intimate — the extraordinary moments that unfold between people who love each other deeply.
           </p>
-          <p className="text-[#7a7267] text-base leading-relaxed font-['Outfit'] font-light">
+          <p className="text-muted text-base leading-relaxed font-['Outfit'] font-light">
             Today the studio operates from its home in New York's Flatiron district, accepting commissions across the United States, Europe, and by special arrangement, globally. We have been featured in Vogue Weddings, Harper's Bazaar Bride, and The New York Times.
           </p>
-          <p className="text-[#7a7267] text-base leading-relaxed font-['Outfit'] font-light">
+          <p className="text-muted text-base leading-relaxed font-['Outfit'] font-light">
             We work exclusively with a curated roster of clients who share our conviction that great photography requires great patience, great trust, and an uncompromising commitment to beauty.
           </p>
         </FadeUp>
@@ -88,24 +88,24 @@ export default function About() {
               alt="Elegant wedding photography"
               className="w-full aspect-[3/4] object-cover"
             />
-            <div className="absolute -top-4 -left-4 w-full h-full border border-[#c9a96e22] pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-full h-full border border-accent/20 pointer-events-none" />
           </div>
         </FadeUp>
       </div>
 
       {/* Values */}
-      <section className="border-t border-[#222220] py-24 mb-24">
+      <section className="border-t border-border py-24 mb-24">
         <div className="max-w-[1400px] mx-auto px-8 md:px-12">
           <FadeUp className="mb-16">
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">Philosophy</div>
-            <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-[#f0ebe0]">What we believe</h2>
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']">Philosophy</div>
+            <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-foreground">What we believe</h2>
           </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#222220]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
             {VALUES.map((v, i) => (
-              <FadeUp key={i} delay={i * 0.1} className="bg-[#080808] p-12">
-                <div className="text-[9px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">0{i + 1}</div>
-                <h3 className="font-['Fraunces'] text-2xl text-[#f0ebe0] mb-4">{v.title}</h3>
-                <p className="text-[#7a7267] text-sm leading-relaxed font-['Outfit'] font-light">{v.body}</p>
+              <FadeUp key={i} delay={i * 0.1} className="bg-surface p-12">
+                <div className="text-[9px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit']">0{i + 1}</div>
+                <h3 className="font-['Fraunces'] text-2xl text-foreground mb-4">{v.title}</h3>
+                <p className="text-muted text-sm leading-relaxed font-['Outfit'] font-light">{v.body}</p>
               </FadeUp>
             ))}
           </div>
@@ -115,8 +115,8 @@ export default function About() {
       {/* Team */}
       <section className="max-w-[1400px] mx-auto px-8 md:px-12 mb-32">
         <FadeUp className="mb-16">
-          <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">The People</div>
-          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-[#f0ebe0]">Meet the team</h2>
+          <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']">The People</div>
+          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-foreground">Meet the team</h2>
         </FadeUp>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TEAM.map((member, i) => (
@@ -130,35 +130,35 @@ export default function About() {
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 />
               </div>
-              <div className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] mb-2 font-['Outfit']">{member.role}</div>
-              <div className="font-['Fraunces'] text-2xl text-[#f0ebe0] mb-3">{member.name}</div>
-              <p className="text-[#7a7267] text-sm leading-relaxed font-['Outfit'] font-light">{member.bio}</p>
+              <div className="text-[9px] tracking-[0.4em] uppercase text-accent mb-2 font-['Outfit']">{member.role}</div>
+              <div className="font-['Fraunces'] text-2xl text-foreground mb-3">{member.name}</div>
+              <p className="text-muted text-sm leading-relaxed font-['Outfit'] font-light">{member.bio}</p>
             </FadeUp>
           ))}
         </div>
       </section>
 
       {/* Press */}
-      <section className="border-t border-[#222220] py-20">
+      <section className="border-t border-border py-20">
         <div className="max-w-[1400px] mx-auto px-8 md:px-12">
-          <div className="text-[10px] tracking-[0.5em] uppercase text-[#3a3830] mb-10 font-['Outfit'] text-center">As Seen In</div>
+          <div className="text-[10px] tracking-[0.5em] uppercase text-muted-alt mb-10 font-['Outfit'] text-center">As Seen In</div>
           <div className="flex flex-wrap justify-center gap-12 items-center">
             {["Vogue", "Harper's Bazaar", "The New York Times", "Town & Country", "Architectural Digest"].map((pub) => (
-              <div key={pub} className="text-[#2a2a28] font-['Fraunces'] text-xl tracking-widest hover:text-[#c9a96e33] transition-colors">{pub}</div>
+              <div key={pub} className="text-muted font-['Fraunces'] text-xl tracking-widest hover:text-accent/20 transition-colors">{pub}</div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="border-t border-[#222220] py-32 text-center">
+      <section className="border-t border-border py-32 text-center">
         <FadeUp className="flex flex-col items-center gap-8 max-w-xl mx-auto px-8">
-          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-[#f0ebe0]">
-            Let's create something <em className="italic text-[#c9a96e]">unforgettable</em>
+          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-foreground">
+            Let's create something <em className="italic text-accent">unforgettable</em>
           </h2>
           <Link
             to="/contact"
-            className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-10 py-5 bg-[#c9a96e] text-[#080808] hover:bg-[#e8c98a] transition-colors duration-300"
+            className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-10 py-5 bg-accent text-accent-foreground hover:bg-accent-soft transition-colors duration-300"
           >
             Book a Consultation
           </Link>

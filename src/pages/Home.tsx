@@ -241,35 +241,78 @@ export default function Home() {
           <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">Recent Stories</div>
           <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-[#f0ebe0]">Latest Sessions</h2>
         </FadeUp>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-6">
           <FadeUp>
-            <div className="overflow-hidden aspect-[16/10] group">
+            <div className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#060605]/80 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
               <motion.img
                 src="https://images.unsplash.com/photo-1537633468298-d86f0c2d4173?w=900&h=600&fit=crop&auto=format"
                 alt="Wedding couple"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-white">
+                <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-3 font-['Outfit']">Weddings</div>
+                <h3 className="font-['Fraunces'] font-light text-[clamp(34px,4vw,56px)] leading-tight mb-4">Eternal Promises</h3>
+                <p className="text-sm text-[#d8cec2] max-w-[24rem] mb-6 font-['Outfit'] font-light">
+                  Cinematic wedding imagery styled with luxe lighting, intimate emotion, and modern editorial polish.
+                </p>
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center gap-3 rounded-full border border-[#c9a96e] px-6 py-3 text-[11px] tracking-[0.35em] uppercase text-[#f0ebe0] transition hover:border-white/40"
+                >
+                  View Gallery →
+                </Link>
+              </div>
             </div>
           </FadeUp>
-          <div className="grid grid-rows-2 gap-1">
+
+          <div className="grid grid-cols-1 gap-6">
             <FadeUp delay={0.1}>
-              <div className="overflow-hidden aspect-[16/7] group">
+              <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#070706]/75 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                 <motion.img
                   src="https://images.unsplash.com/photo-1770199780470-1e6e3d30f8f8?w=700&h=400&fit=crop&auto=format"
                   alt="Portrait session"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                  <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-2 font-['Outfit']">Portraits</div>
+                  <h4 className="font-['Fraunces'] font-light text-3xl leading-tight">Timeless Elegance</h4>
+                </div>
               </div>
             </FadeUp>
-            <FadeUp delay={0.2}>
-              <div className="overflow-hidden aspect-[16/7] group">
-                <motion.img
-                  src="https://images.unsplash.com/photo-1772241824154-ce6e7c985ff9?w=700&h=400&fit=crop&auto=format"
-                  alt="Couple portrait"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </FadeUp>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <FadeUp delay={0.2}>
+                <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#070706]/75 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
+                  <motion.img
+                    src="https://images.unsplash.com/photo-1772241824154-ce6e7c985ff9?w=700&h=400&fit=crop&auto=format"
+                    alt="Couple portrait"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-2 font-['Outfit']">Engagements</div>
+                    <p className="text-sm font-['Outfit'] font-light">A moment to remember captured with soft glow and refined composition.</p>
+                  </div>
+                </div>
+              </FadeUp>
+
+              <FadeUp delay={0.3}>
+                <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#070706]/75 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
+                  <motion.img
+                    src="https://images.unsplash.com/photo-1517964603305-03511933879a?w=700&h=400&fit=crop&auto=format"
+                    alt="Styled details"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-2 font-['Outfit']">Details</div>
+                    <p className="text-sm font-['Outfit'] font-light">The little things that lift every session into a cohesive luxury story.</p>
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
           </div>
         </div>
       </section>

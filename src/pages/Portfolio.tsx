@@ -39,10 +39,10 @@ function GalleryItem({ item, index }: { item: typeof IMAGES[0]; index: number })
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         />
       </div>
-      <div className="absolute inset-0 bg-[#080808] opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-background opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
       <div className="absolute inset-0 flex flex-col justify-end p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-        <div className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] mb-1 font-['Outfit']">{item.cat} · {item.location}</div>
-        <div className="text-lg font-['Fraunces'] text-[#f0ebe0]">{item.title}</div>
+        <div className="text-[9px] tracking-[0.4em] uppercase text-accent mb-1 font-['Outfit']">{item.cat} · {item.location}</div>
+        <div className="text-lg font-['Fraunces'] text-foreground">{item.title}</div>
       </div>
     </motion.div>
   );
@@ -54,11 +54,11 @@ export default function Portfolio() {
   const filtered = active === "All" ? IMAGES : IMAGES.filter((i) => i.cat === active);
 
   return (
-    <div className="bg-[#080808] pt-32">
+    <div className="bg-background pt-32">
       {/* Header */}
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-16">
         <motion.div
-          className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']"
+          className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -66,7 +66,7 @@ export default function Portfolio() {
           The Work
         </motion.div>
         <motion.h1
-          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-[#f0ebe0] mb-12"
+          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-foreground mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1 }}
@@ -87,8 +87,8 @@ export default function Portfolio() {
               onClick={() => setActive(cat)}
               className={`text-[10px] tracking-[0.3em] uppercase font-['Outfit'] px-5 py-2.5 border transition-all duration-300 ${
                 active === cat
-                  ? "border-[#c9a96e] text-[#c9a96e] bg-[#c9a96e11]"
-                  : "border-[#222220] text-[#7a7267] hover:border-[#444] hover:text-[#f0ebe0]"
+                  ? "border-accent text-accent bg-accent/10"
+                  : "border-border text-muted hover:border-border-soft hover:text-foreground"
               }`}
             >
               {cat}
@@ -118,8 +118,8 @@ export default function Portfolio() {
       </div>
 
       {/* Bottom quote */}
-      <div className="border-t border-[#222220] py-24 text-center">
-        <div className="font-['Fraunces'] italic text-[#3a3830] text-[clamp(24px,4vw,56px)] leading-snug px-8">
+      <div className="border-t border-border py-24 text-center">
+        <div className="font-['Fraunces'] italic text-muted-alt text-[clamp(24px,4vw,56px)] leading-snug px-8">
           "Every frame tells a truth."
         </div>
       </div>

@@ -102,18 +102,18 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-[#080808] pt-32">
+    <div className="bg-background pt-32">
       {/* Hero */}
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-24">
         <motion.div
-          className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']"
+          className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           Investments
         </motion.div>
         <motion.h1
-          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-[#f0ebe0] mb-6"
+          className="font-['Fraunces'] font-light text-[clamp(44px,7vw,100px)] leading-none text-foreground mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -121,7 +121,7 @@ export default function Services() {
           Services
         </motion.h1>
         <motion.p
-          className="text-[#7a7267] text-base max-w-xl font-['Outfit'] font-light leading-relaxed"
+          className="text-muted text-base max-w-xl font-['Outfit'] font-light leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -132,39 +132,39 @@ export default function Services() {
 
       {/* Packages */}
       <div className="max-w-[1400px] mx-auto px-8 md:px-12 mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#222220]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {PACKAGES.map((pkg, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <div
-                className={`h-full flex flex-col p-10 ${pkg.featured ? "bg-[#111008]" : "bg-[#080808]"} relative`}
+                className={`h-full flex flex-col p-10 ${pkg.featured ? "bg-surface" : "bg-background"} relative`}
               >
                 {pkg.featured && (
-                  <div className="absolute top-0 left-10 -translate-y-1/2 bg-[#c9a96e] text-[#080808] text-[9px] tracking-[0.35em] uppercase font-['Outfit'] px-4 py-1.5">
+                  <div className="absolute top-0 left-10 -translate-y-1/2 bg-accent text-accent-foreground text-[9px] tracking-[0.35em] uppercase font-['Outfit'] px-4 py-1.5">
                     Recommended
                   </div>
                 )}
-                <div className="text-[9px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">{pkg.tag}</div>
-                <div className="font-['Fraunces'] text-3xl text-[#f0ebe0] mb-2">{pkg.name}</div>
-                <div className="text-[10px] tracking-[0.3em] uppercase text-[#7a7267] mb-6 font-['Outfit']">{pkg.duration}</div>
-                <div className="font-['Fraunces'] text-[clamp(32px,4vw,52px)] text-[#f0ebe0] mb-8 leading-none">{pkg.price}</div>
-                <div className="h-px bg-[#222220] mb-8" />
+                <div className="text-[9px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']">{pkg.tag}</div>
+                <div className="font-['Fraunces'] text-3xl text-foreground mb-2">{pkg.name}</div>
+                <div className="text-[10px] tracking-[0.3em] uppercase text-muted mb-6 font-['Outfit']">{pkg.duration}</div>
+                <div className="font-['Fraunces'] text-[clamp(32px,4vw,52px)] text-foreground mb-8 leading-none">{pkg.price}</div>
+                <div className="h-px bg-border mb-8" />
                 <ul className="flex flex-col gap-3 mb-8 flex-1">
                   {pkg.includes.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
-                      <span className="text-[#c9a96e] mt-1 text-xs">—</span>
-                      <span className="text-[#a09880] text-sm font-['Outfit'] font-light">{item}</span>
+                      <span className="text-accent mt-1 text-xs">—</span>
+                      <span className="text-muted-alt text-sm font-['Outfit'] font-light">{item}</span>
                     </li>
                   ))}
                 </ul>
                 {pkg.note && (
-                  <div className="text-[10px] tracking-[0.2em] text-[#c9a96e55] italic font-['Fraunces'] mb-6">{pkg.note}</div>
+                  <div className="text-[10px] tracking-[0.2em] text-accent/40 italic font-['Fraunces'] mb-6">{pkg.note}</div>
                 )}
                 <Link
                   to="/contact"
                   className={`text-[10px] tracking-[0.3em] uppercase font-['Outfit'] py-4 text-center border transition-all duration-300 mt-auto ${
                     pkg.featured
-                      ? "bg-[#c9a96e] text-[#080808] border-[#c9a96e] hover:bg-[#e8c98a]"
-                      : "border-[#222220] text-[#f0ebe0] hover:border-[#c9a96e] hover:text-[#c9a96e]"
+                      ? "bg-accent text-accent-foreground border-accent hover:bg-accent-soft"
+                      : "border-border text-foreground hover:border-accent hover:text-accent"
                   }`}
                 >
                   Inquire
@@ -176,16 +176,16 @@ export default function Services() {
       </div>
 
       {/* Additional */}
-      <section className="border-t border-[#222220] py-24 mb-24">
+      <section className="border-t border-border py-24 mb-24">
         <div className="max-w-[1400px] mx-auto px-8 md:px-12">
           <FadeUp className="mb-12">
-            <h2 className="font-['Fraunces'] font-light text-[clamp(28px,4vw,52px)] text-[#f0ebe0]">Additional Services</h2>
+            <h2 className="font-['Fraunces'] font-light text-[clamp(28px,4vw,52px)] text-foreground">Additional Services</h2>
           </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#222220]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
             {ADDITIONAL.map((item, i) => (
-              <FadeUp key={i} delay={i * 0.05} className="bg-[#080808] flex justify-between items-center px-8 py-5">
-                <span className="text-[#a09880] font-['Outfit'] font-light">{item.name}</span>
-                <span className="text-[#c9a96e] font-['Fraunces'] text-xl">{item.price}</span>
+              <FadeUp key={i} delay={i * 0.05} className="bg-background flex justify-between items-center px-8 py-5">
+                <span className="text-muted-alt font-['Outfit'] font-light">{item.name}</span>
+                <span className="text-accent font-['Fraunces'] text-xl">{item.price}</span>
               </FadeUp>
             ))}
           </div>
@@ -195,36 +195,36 @@ export default function Services() {
       {/* Process */}
       <section className="max-w-[1400px] mx-auto px-8 md:px-12 mb-32">
         <FadeUp className="mb-16">
-          <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">How It Works</div>
-          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-[#f0ebe0]">The Process</h2>
+          <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']">How It Works</div>
+          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-foreground">The Process</h2>
         </FadeUp>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-[#222220]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-border">
           {PROCESS.map((p, i) => (
-            <FadeUp key={i} delay={i * 0.08} className="bg-[#080808] p-10">
-              <div className="font-['Fraunces'] text-4xl text-[#1a1a18] mb-6 leading-none">{p.step}</div>
-              <div className="font-['Fraunces'] text-xl text-[#f0ebe0] mb-3">{p.title}</div>
-              <p className="text-[#7a7267] text-sm leading-relaxed font-['Outfit'] font-light">{p.body}</p>
+            <FadeUp key={i} delay={i * 0.08} className="bg-background p-10">
+              <div className="font-['Fraunces'] text-4xl text-muted-alt mb-6 leading-none">{p.step}</div>
+              <div className="font-['Fraunces'] text-xl text-foreground mb-3">{p.title}</div>
+              <p className="text-muted text-sm leading-relaxed font-['Outfit'] font-light">{p.body}</p>
             </FadeUp>
           ))}
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-[#222220] py-24 mb-0">
+      <section className="border-t border-border py-24 mb-0">
         <div className="max-w-[900px] mx-auto px-8 md:px-12">
           <FadeUp className="mb-16">
-            <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,56px)] text-[#f0ebe0]">Common Questions</h2>
+            <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,56px)] text-foreground">Common Questions</h2>
           </FadeUp>
-          <div className="flex flex-col divide-y divide-[#222220]">
+          <div className="flex flex-col divide-y divide-border">
             {FAQS.map((faq, i) => (
               <FadeUp key={i} delay={i * 0.05}>
                 <button
                   className="w-full text-left py-6 flex justify-between items-start gap-6 group"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
-                  <span className="font-['Fraunces'] text-lg text-[#f0ebe0] group-hover:text-[#c9a96e] transition-colors">{faq.q}</span>
+                  <span className="font-['Fraunces'] text-lg text-foreground group-hover:text-accent transition-colors">{faq.q}</span>
                   <motion.span
-                    className="text-[#c9a96e] text-xl leading-none shrink-0 mt-0.5"
+                    className="text-accent text-xl leading-none shrink-0 mt-0.5"
                     animate={{ rotate: openFaq === i ? 45 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -237,7 +237,7 @@ export default function Services() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="text-[#7a7267] text-sm leading-relaxed font-['Outfit'] font-light pb-6">{faq.a}</p>
+                  <p className="text-muted text-sm leading-relaxed font-['Outfit'] font-light pb-6">{faq.a}</p>
                 </motion.div>
               </FadeUp>
             ))}
