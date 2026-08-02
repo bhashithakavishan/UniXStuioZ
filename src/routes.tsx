@@ -5,9 +5,10 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import { DEFAULT_OG_IMAGE } from "./data/images";
 
 const titleSuffix = " | UniX StudioZ";
-const defaultOgImage = "https://images.unsplash.com/photo-1768586471676-6af1d219e99e?w=1600&h=900&fit=crop&auto=format";
+const defaultOgImage = DEFAULT_OG_IMAGE;
 
 export const router = createBrowserRouter([
   {

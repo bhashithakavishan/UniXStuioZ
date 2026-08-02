@@ -1,22 +1,10 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import { PORTFOLIO_IMAGES } from "../data/images";
 
 const CATEGORIES = ["All", "Weddings", "Portraits", "Couples", "Editorial", "Fashion"];
 
-const IMAGES = [
-  { src: "https://images.unsplash.com/photo-1768586471676-6af1d219e99e?w=700&h=950&fit=crop&auto=format", cat: "Weddings", title: "Grand Staircase", location: "Paris" },
-  { src: "https://images.unsplash.com/photo-1675726205553-4e348f24da2c?w=700&h=950&fit=crop&auto=format", cat: "Portraits", title: "Veiled Study", location: "New York" },
-  { src: "https://images.unsplash.com/photo-1537633468298-d86f0c2d4173?w=700&h=500&fit=crop&auto=format", cat: "Weddings", title: "First Kiss", location: "Tuscany" },
-  { src: "https://images.unsplash.com/photo-1780541721627-233827fdbdec?w=700&h=950&fit=crop&auto=format", cat: "Weddings", title: "Cathedral Light", location: "Rome" },
-  { src: "https://images.unsplash.com/photo-1654765437547-6b572f52ee1a?w=700&h=700&fit=crop&auto=format", cat: "Fashion", title: "Dark Elegance", location: "London" },
-  { src: "https://images.unsplash.com/photo-1765292783735-9ec7213b1df1?w=700&h=950&fit=crop&auto=format", cat: "Couples", title: "Rainy Evening", location: "Manhattan" },
-  { src: "https://images.unsplash.com/photo-1770199780470-1e6e3d30f8f8?w=700&h=950&fit=crop&auto=format", cat: "Portraits", title: "Soft Light", location: "Studio" },
-  { src: "https://images.unsplash.com/photo-1780542210086-2e273e05d0ac?w=700&h=500&fit=crop&auto=format", cat: "Editorial", title: "Couture Ascent", location: "Paris" },
-  { src: "https://images.unsplash.com/photo-1772241824154-ce6e7c985ff9?w=700&h=700&fit=crop&auto=format", cat: "Couples", title: "Golden Hour", location: "Amalfi" },
-  { src: "https://images.unsplash.com/photo-1542992933-ce75d0187ec1?w=700&h=500&fit=crop&auto=format", cat: "Editorial", title: "Behind the Lens", location: "New York" },
-  { src: "https://images.unsplash.com/photo-1782789152778-5df58ec05527?w=700&h=950&fit=crop&auto=format", cat: "Portraits", title: "Gentleman", location: "London" },
-  { src: "https://images.unsplash.com/photo-1598006640672-f0cc33c40702?w=700&h=500&fit=crop&auto=format", cat: "Fashion", title: "Studio Black", location: "Milan" },
-];
+const IMAGES = PORTFOLIO_IMAGES;
 
 function GalleryItem({ item, index }: { item: typeof IMAGES[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);

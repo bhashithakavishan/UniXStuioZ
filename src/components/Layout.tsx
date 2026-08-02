@@ -104,7 +104,7 @@ export default function Layout() {
   }, [matches])
 
   return (
-    <div className="min-h-screen bg-[#080808] text-[#f0ebe0]">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
       <motion.header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
@@ -119,8 +119,8 @@ export default function Layout() {
       >
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 h-20 flex items-center justify-between">
           <NavLink to="/" className="flex flex-col leading-none">
-            <span className="font-['Fraunces'] text-xl tracking-[0.15em] text-[#f0ebe0]">UniX StudioZ</span>
-            <span className="text-[10px] tracking-[0.35em] text-[#c9a96e] uppercase font-['Outfit'] font-light mt-0.5">Modern Luxury Studio</span>
+            <span className="font-['Fraunces'] text-xl tracking-[0.15em] text-foreground">UniX StudioZ</span>
+            <span className="text-[10px] tracking-[0.35em] text-accent uppercase font-['Outfit'] font-light mt-0.5">Modern Luxury Studio</span>
           </NavLink>
 
           {/* Desktop nav */}
@@ -132,7 +132,7 @@ export default function Layout() {
                 end={link.to === "/"}
                 className={({ isActive }) =>
                   `text-[11px] tracking-[0.3em] uppercase font-['Outfit'] font-light transition-colors duration-300 relative group ${
-                    isActive ? "text-[#c9a96e]" : "text-[#f0ebe0] hover:text-[#c9a96e]"
+                    isActive ? "text-accent" : "text-foreground hover:text-accent"
                   }`
                 }
               >
@@ -141,7 +141,7 @@ export default function Layout() {
             ))}
             <NavLink
               to="/contact"
-              className="ml-4 text-[10px] tracking-[0.3em] uppercase font-['Outfit'] px-6 py-3 border border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#080808] transition-all duration-300"
+              className="ml-4 text-[10px] tracking-[0.3em] uppercase font-['Outfit'] px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
             >
               Book Now
             </NavLink>
@@ -154,17 +154,17 @@ export default function Layout() {
             aria-label="Toggle menu"
           >
             <motion.span
-              className="block w-6 h-px bg-[#f0ebe0]"
+              className="block w-6 h-px bg-foreground"
               animate={menuOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block w-6 h-px bg-[#f0ebe0]"
+              className="block w-6 h-px bg-foreground"
               animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block w-6 h-px bg-[#f0ebe0]"
+              className="block w-6 h-px bg-foreground"
               animate={menuOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.3 }}
             />
@@ -176,7 +176,7 @@ export default function Layout() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[#080808] flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8"
             initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
             animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
             exit={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
@@ -193,7 +193,7 @@ export default function Layout() {
                   to={link.to}
                   end={link.to === "/"}
                   className={({ isActive }) =>
-                    `text-3xl font-['Fraunces'] font-light ${isActive ? "text-[#c9a96e]" : "text-[#f0ebe0]"}`
+                    `text-3xl font-['Fraunces'] font-light ${isActive ? "text-accent" : "text-foreground"}`
                   }
                 >
                   {link.label}
@@ -208,7 +208,7 @@ export default function Layout() {
             >
               <NavLink
                 to="/contact"
-                className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 border border-[#c9a96e] text-[#c9a96e]"
+                className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 border border-accent text-accent"
               >
                 Book a Session
               </NavLink>
@@ -234,36 +234,36 @@ export default function Layout() {
       <footer className="border-t border-[#222220] bg-[#080808]">
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="font-['Fraunces'] text-2xl tracking-[0.1em] text-[#f0ebe0] mb-1">UniX StudioZ</div>
-            <div className="text-[10px] tracking-[0.35em] text-[#c9a96e] uppercase font-['Outfit'] font-light mb-6">Modern Luxury Studio</div>
-            <p className="text-[#7a7267] text-sm leading-relaxed font-['Outfit'] font-light max-w-xs">
+            <div className="font-['Fraunces'] text-2xl tracking-[0.1em] text-foreground mb-1">UniX StudioZ</div>
+            <div className="text-[10px] tracking-[0.35em] text-accent uppercase font-['Outfit'] font-light mb-6">Modern Luxury Studio</div>
+            <p className="text-muted text-sm leading-relaxed font-['Outfit'] font-light max-w-xs">
               Crafting modern luxury imagery for clients who demand elegance, precision, and timeless storytelling.
             </p>
           </div>
           <div>
-            <div className="text-[10px] tracking-[0.35em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">Navigation</div>
+            <div className="text-[10px] tracking-[0.35em] uppercase text-accent mb-6 font-['Outfit']">Navigation</div>
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
-                <NavLink key={link.to} to={link.to} end={link.to === "/"} className="text-[#7a7267] hover:text-[#f0ebe0] text-sm transition-colors font-['Outfit'] font-light">
+                <NavLink key={link.to} to={link.to} end={link.to === "/"} className="text-muted hover:text-foreground text-sm transition-colors font-['Outfit'] font-light">
                   {link.label}
                 </NavLink>
               ))}
             </div>
           </div>
           <div>
-            <div className="text-[10px] tracking-[0.35em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">Connect</div>
-            <div className="flex flex-col gap-2 text-[#7a7267] text-sm font-['Outfit'] font-light">
-              <a href="mailto:hello@unixstudioz.com" className="hover:text-[#f0ebe0] transition-colors">hello@unixstudioz.com</a>
+            <div className="text-[10px] tracking-[0.35em] uppercase text-accent mb-6 font-['Outfit']">Connect</div>
+            <div className="flex flex-col gap-2 text-muted text-sm font-['Outfit'] font-light">
+              <a href="mailto:hello@unixstudioz.com" className="hover:text-foreground transition-colors">hello@unixstudioz.com</a>
               <span>+1 (212) 555 0198</span>
               <span className="mt-2">47 West 25th Street<br />New York, NY 10010</span>
             </div>
           </div>
         </div>
-        <div className="border-t border-[#222220] max-w-[1400px] mx-auto px-8 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="text-[#3a3830] text-xs font-['Outfit'] tracking-widest">© 2026 UniX StudioZ. ALL RIGHTS RESERVED.</span>
+          <div className="border-t border-border max-w-[1400px] mx-auto px-8 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <span className="text-muted text-xs font-['Outfit'] tracking-widest">© 2026 UniX StudioZ. ALL RIGHTS RESERVED.</span>
           <div className="flex gap-6">
-            {["Instagram", "Pinterest", "Vogue"].map((s) => (
-              <span key={s} className="text-[#3a3830] hover:text-[#c9a96e] text-xs tracking-widest cursor-pointer transition-colors font-['Outfit']">{s.toUpperCase()}</span>
+            {['Instagram', 'Pinterest', 'Vogue'].map((s) => (
+              <span key={s} className="text-muted hover:text-accent text-xs tracking-widest cursor-pointer transition-colors font-['Outfit']">{s.toUpperCase()}</span>
             ))}
           </div>
         </div>

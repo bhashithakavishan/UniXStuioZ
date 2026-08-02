@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router";
+import { ABOUT_STORY_IMAGE, ABOUT_TEAM } from "../data/images";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -18,26 +19,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-const TEAM = [
-  {
-    name: "Élise Moreau",
-    role: "Founder & Lead Photographer",
-    img: "https://images.unsplash.com/photo-1675726205553-4e348f24da2c?w=500&h=650&fit=crop&auto=format",
-    bio: "With over 12 years documenting the world's most intimate celebrations, Élise brings a painterly eye and an unwavering calm to every session."
-  },
-  {
-    name: "James Whitmore",
-    role: "Second Photographer",
-    img: "https://images.unsplash.com/photo-1782789152778-5df58ec05527?w=500&h=650&fit=crop&auto=format",
-    bio: "A documentary filmmaker turned photographer, James specializes in candid moments that reveal the soul of a story."
-  },
-  {
-    name: "Yuki Tanaka",
-    role: "Post-Production Director",
-    img: "https://images.unsplash.com/photo-1654765437547-6b572f52ee1a?w=500&h=650&fit=crop&auto=format",
-    bio: "Yuki's cinematic colour grading has defined UniX StudioZ's signature palette — warm, layered, and entirely timeless."
-  }
-];
+const TEAM = ABOUT_TEAM;
 
 const VALUES = [
   { title: "Restraint", body: "We never oversaturate or over-process. The camera captures what is real; our role is to honour it." },
@@ -84,7 +66,7 @@ export default function About() {
         <FadeUp delay={0.15} className="order-1 md:order-2">
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1780541721627-233827fdbdec?w=700&h=900&fit=crop&auto=format"
+              src={ABOUT_STORY_IMAGE}
               alt="Elegant wedding photography"
               className="w-full aspect-[3/4] object-cover"
             />

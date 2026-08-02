@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { CONTACT_SPLASH_IMAGE, CONTACT_BOTTOM_IMAGES } from "../data/images";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -94,7 +95,7 @@ export default function Contact() {
 
           <div className="mt-auto">
             <img
-              src="https://images.unsplash.com/photo-1537633468298-d86f0c2d4173?w=600&h=400&fit=crop&auto=format"
+              src={CONTACT_SPLASH_IMAGE}
               alt="Wedding moment"
               className="w-full aspect-video object-cover"
             />
@@ -226,12 +227,7 @@ export default function Contact() {
 
       {/* Bottom image strip */}
       <div className="grid grid-cols-4 h-48 md:h-64">
-        {[
-          "https://images.unsplash.com/photo-1780541721627-233827fdbdec?w=400&h=300&fit=crop&auto=format",
-          "https://images.unsplash.com/photo-1675726205553-4e348f24da2c?w=400&h=300&fit=crop&auto=format",
-          "https://images.unsplash.com/photo-1765292783735-9ec7213b1df1?w=400&h=300&fit=crop&auto=format",
-          "https://images.unsplash.com/photo-1770199780470-1e6e3d30f8f8?w=400&h=300&fit=crop&auto=format",
-        ].map((src, i) => (
+        {CONTACT_BOTTOM_IMAGES.map((src, i) => (
           <div key={i} className="overflow-hidden">
             <img src={src} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
           </div>

@@ -1,25 +1,10 @@
 import { useRef } from "react";
 import { Link } from "react-router";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { HOME_HERO_IMAGE, HOME_FEATURED_IMAGES, HOME_ABOUT_IMAGE, HOME_LATEST_IMAGES } from "../data/images";
 
-const HERO_IMG = "https://images.unsplash.com/photo-1768586471676-6af1d219e99e?w=1600&h=1000&fit=crop&auto=format";
-const FEATURED = [
-  {
-    src: "https://images.unsplash.com/photo-1780541721627-233827fdbdec?w=800&h=1100&fit=crop&auto=format",
-    label: "Weddings",
-    tag: "Editorial",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1675726205553-4e348f24da2c?w=800&h=1100&fit=crop&auto=format",
-    label: "Portraits",
-    tag: "Fine Art",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1765292783735-9ec7213b1df1?w=800&h=1100&fit=crop&auto=format",
-    label: "Couples",
-    tag: "Cinematic",
-  },
-];
+const HERO_IMG = HOME_HERO_IMAGE;
+const FEATURED = HOME_FEATURED_IMAGES;
 
 const STATS = [
   { value: "500+", label: "Clients" },
@@ -70,7 +55,7 @@ export default function Home() {
           style={{ opacity, y: titleY }}
         >
           <motion.div
-            className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit'] font-light"
+            className="text-[10px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit'] font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -78,16 +63,16 @@ export default function Home() {
             New York · Est. 2012
           </motion.div>
           <motion.h1
-            className="font-['Fraunces'] font-light text-[clamp(56px,9vw,130px)] leading-[0.95] tracking-tight text-[#f0ebe0] mb-6 max-w-3xl"
+            className="font-['Fraunces'] font-light text-[clamp(56px,9vw,130px)] leading-[0.95] tracking-tight text-foreground mb-6 max-w-3xl"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             Timeless<br />
-            <em className="italic text-[#c9a96e]">Storytelling</em>
+            <em className="italic text-accent">Storytelling</em>
           </motion.h1>
           <motion.p
-            className="text-[#a09880] text-sm tracking-[0.08em] max-w-md font-['Outfit'] font-light leading-relaxed mb-10"
+            className="text-muted text-sm tracking-[0.08em] max-w-md font-['Outfit'] font-light leading-relaxed mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -102,13 +87,13 @@ export default function Home() {
           >
             <Link
               to="/portfolio"
-              className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 bg-[#c9a96e] text-[#080808] hover:bg-[#e8c98a] transition-colors duration-300"
+              className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 bg-accent text-accent-foreground hover:bg-[#e8c98a] transition-colors duration-300"
             >
               View Portfolio
             </Link>
             <Link
               to="/contact"
-              className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 border border-[#f0ebe033] text-[#f0ebe0] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors duration-300"
+              className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 border border-[rgba(240,235,224,0.2)] text-foreground hover:border-accent hover:text-accent transition-colors duration-300"
             >
               Book a Session
             </Link>
@@ -122,7 +107,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >
-          <span className="text-[9px] tracking-[0.4em] uppercase text-[#7a7267] font-['Outfit'] rotate-90 origin-center">Scroll</span>
+          <span className="text-[9px] tracking-[0.4em] uppercase text-muted font-['Outfit'] rotate-90 origin-center">Scroll</span>
           <motion.div
             className="w-px h-12 bg-gradient-to-b from-[#c9a96e] to-transparent"
             animate={{ scaleY: [1, 0.3, 1] }}
@@ -135,15 +120,15 @@ export default function Home() {
       <section className="max-w-[1400px] mx-auto px-8 md:px-12 py-32">
         <FadeUp className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">Selected Work</div>
-            <h2 className="font-['Fraunces'] font-light text-[clamp(36px,5vw,72px)] leading-none text-[#f0ebe0]">
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']">Selected Work</div>
+            <h2 className="font-['Fraunces'] font-light text-[clamp(36px,5vw,72px)] leading-none text-foreground">
               Modern luxury photography<br />
               <em className="italic">for every story</em>
             </h2>
           </div>
           <Link
             to="/portfolio"
-            className="text-[10px] tracking-[0.3em] uppercase font-['Outfit'] text-[#c9a96e] hover:text-[#e8c98a] transition-colors border-b border-[#c9a96e33] pb-1 self-start md:self-auto"
+            className="text-[10px] tracking-[0.3em] uppercase font-['Outfit'] text-accent hover:text-accent transition-colors border-b border-[rgba(201,169,110,0.2)] pb-1 self-start md:self-auto"
           >
             View All Work →
           </Link>
@@ -164,8 +149,8 @@ export default function Home() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080808bb] via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6">
-                  <div className="text-[9px] tracking-[0.4em] uppercase text-[#c9a96e] mb-2 font-['Outfit']">{item.tag}</div>
-                  <div className="text-xl font-['Fraunces'] font-light text-[#f0ebe0]">{item.label}</div>
+                  <div className="text-[9px] tracking-[0.4em] uppercase text-accent mb-2 font-['Outfit']">{item.tag}</div>
+                  <div className="text-xl font-['Fraunces'] font-light text-foreground">{item.label}</div>
                 </div>
               </Link>
             </FadeUp>
@@ -181,7 +166,7 @@ export default function Home() {
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         >
           {[...Array(6)].map((_, i) => (
-            <span key={i} className="text-[clamp(36px,5vw,64px)] font-['Fraunces'] font-light text-[#1a1a1a] tracking-tight shrink-0">
+            <span key={i} className="text-[clamp(36px,5vw,64px)] font-['Fraunces'] font-light text-foreground tracking-tight shrink-0">
               Weddings · Portraits · Editorial · Engagements · Fashion · Elopements ·{" "}
             </span>
           ))}
@@ -193,7 +178,7 @@ export default function Home() {
         <FadeUp>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1542992933-ce75d0187ec1?w=700&h=900&fit=crop&auto=format"
+              src={HOME_ABOUT_IMAGE}
               alt="Photographer at work"
               className="w-full aspect-[4/5] object-cover"
             />
@@ -202,21 +187,21 @@ export default function Home() {
         </FadeUp>
         <FadeUp delay={0.2} className="flex flex-col gap-8">
           <div>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-6 font-['Outfit']">The Studio</div>
-            <h2 className="font-['Fraunces'] font-light text-[clamp(32px,4vw,56px)] leading-tight text-[#f0ebe0] mb-6">
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-6 font-['Outfit']">The Studio</div>
+            <h2 className="font-['Fraunces'] font-light text-[clamp(32px,4vw,56px)] leading-tight text-foreground mb-6">
               Artistry rooted in<br />
               <em className="italic">quiet observation</em>
             </h2>
-            <p className="text-[#7a7267] text-base leading-relaxed font-['Outfit'] font-light mb-4">
+            <p className="text-muted text-base leading-relaxed font-['Outfit'] font-light mb-4">
               UniX StudioZ is a modern luxury photography studio founded on the belief that authentic emotion, captured with technical mastery, produces imagery that outlasts trends.
             </p>
-            <p className="text-[#7a7267] text-base leading-relaxed font-['Outfit'] font-light">
+            <p className="text-muted text-base leading-relaxed font-['Outfit'] font-light">
               We work with a limited number of clients each year, ensuring each project receives the care and singular attention it deserves.
             </p>
           </div>
           <Link
             to="/about"
-            className="self-start text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 border border-[#222220] text-[#f0ebe0] hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors duration-300"
+            className="self-start text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-8 py-4 border border-border text-foreground hover:border-accent hover:text-accent transition-colors duration-300"
           >
             Our Story
           </Link>
@@ -228,8 +213,8 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-20 grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#222220]">
           {STATS.map((s, i) => (
             <FadeUp key={i} delay={i * 0.1} className="flex flex-col items-center py-10 md:py-0 px-8 text-center gap-2">
-              <div className="font-['Fraunces'] text-[clamp(40px,5vw,72px)] font-light text-[#c9a96e] leading-none">{s.value}</div>
-              <div className="text-[10px] tracking-[0.4em] uppercase text-[#7a7267] font-['Outfit']">{s.label}</div>
+              <div className="font-['Fraunces'] text-[clamp(40px,5vw,72px)] font-light text-accent leading-none">{s.value}</div>
+              <div className="text-[10px] tracking-[0.4em] uppercase text-muted font-['Outfit']">{s.label}</div>
             </FadeUp>
           ))}
         </div>
@@ -238,27 +223,27 @@ export default function Home() {
       {/* Recent work full bleed */}
       <section className="py-32">
         <FadeUp className="max-w-[1400px] mx-auto px-8 md:px-12 mb-12">
-          <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] mb-4 font-['Outfit']">Recent Stories</div>
-          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-[#f0ebe0]">Latest Sessions</h2>
+          <div className="text-[10px] tracking-[0.5em] uppercase text-accent mb-4 font-['Outfit']">Recent Stories</div>
+          <h2 className="font-['Fraunces'] font-light text-[clamp(32px,5vw,64px)] text-foreground">Latest Sessions</h2>
         </FadeUp>
         <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-6">
           <FadeUp>
             <div className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#060605]/80 shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
               <motion.img
-                src="https://images.unsplash.com/photo-1537633468298-d86f0c2d4173?w=900&h=600&fit=crop&auto=format"
+                src={HOME_LATEST_IMAGES.wedding}
                 alt="Wedding couple"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-8 text-white">
-                <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-3 font-['Outfit']">Weddings</div>
+                <div className="text-[10px] uppercase tracking-[0.45em] text-accent mb-3 font-['Outfit']">Weddings</div>
                 <h3 className="font-['Fraunces'] font-light text-[clamp(34px,4vw,56px)] leading-tight mb-4">Eternal Promises</h3>
-                <p className="text-sm text-[#d8cec2] max-w-[24rem] mb-6 font-['Outfit'] font-light">
+                <p className="text-sm text-muted-foreground max-w-[24rem] mb-6 font-['Outfit'] font-light">
                   Cinematic wedding imagery styled with luxe lighting, intimate emotion, and modern editorial polish.
                 </p>
                 <Link
                   to="/portfolio"
-                  className="inline-flex items-center gap-3 rounded-full border border-[#c9a96e] px-6 py-3 text-[11px] tracking-[0.35em] uppercase text-[#f0ebe0] transition hover:border-white/40"
+                  className="inline-flex items-center gap-3 rounded-full border border-accent px-6 py-3 text-[11px] tracking-[0.35em] uppercase text-foreground transition hover:border-white/40"
                 >
                   View Gallery →
                 </Link>
@@ -270,13 +255,13 @@ export default function Home() {
             <FadeUp delay={0.1}>
               <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#070706]/75 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                 <motion.img
-                  src="https://images.unsplash.com/photo-1770199780470-1e6e3d30f8f8?w=700&h=400&fit=crop&auto=format"
+                  src={HOME_LATEST_IMAGES.portrait}
                   alt="Portrait session"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                  <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-2 font-['Outfit']">Portraits</div>
+                  <div className="text-[10px] uppercase tracking-[0.45em] text-accent mb-2 font-['Outfit']">Portraits</div>
                   <h4 className="font-['Fraunces'] font-light text-3xl leading-tight">Timeless Elegance</h4>
                 </div>
               </div>
@@ -286,13 +271,13 @@ export default function Home() {
               <FadeUp delay={0.2}>
                 <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#070706]/75 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                   <motion.img
-                    src="https://images.unsplash.com/photo-1772241824154-ce6e7c985ff9?w=700&h=400&fit=crop&auto=format"
+                    src={HOME_LATEST_IMAGES.engagement}
                     alt="Couple portrait"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-2 font-['Outfit']">Engagements</div>
+                    <div className="text-[10px] uppercase tracking-[0.45em] text-accent mb-2 font-['Outfit']">Engagements</div>
                     <p className="text-sm font-['Outfit'] font-light">A moment to remember captured with soft glow and refined composition.</p>
                   </div>
                 </div>
@@ -301,13 +286,13 @@ export default function Home() {
               <FadeUp delay={0.3}>
                 <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#070706]/75 shadow-[0_24px_80px_rgba(0,0,0,0.3)]">
                   <motion.img
-                    src="https://images.unsplash.com/photo-1517964603305-03511933879a?w=700&h=400&fit=crop&auto=format"
+                    src={HOME_LATEST_IMAGES.details}
                     alt="Styled details"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <div className="text-[10px] uppercase tracking-[0.45em] text-[#c9a96e] mb-2 font-['Outfit']">Details</div>
+                    <div className="text-[10px] uppercase tracking-[0.45em] text-accent mb-2 font-['Outfit']">Details</div>
                     <p className="text-sm font-['Outfit'] font-light">The little things that lift every session into a cohesive luxury story.</p>
                   </div>
                 </div>
@@ -321,11 +306,11 @@ export default function Home() {
       <section className="border-y border-[#222220] py-32">
         <div className="max-w-[800px] mx-auto px-8 md:px-12 text-center">
           <FadeUp>
-            <div className="text-[#c9a96e] text-5xl font-['Fraunces'] mb-8 leading-none">"</div>
-            <blockquote className="font-['Fraunces'] font-light text-[clamp(22px,3.5vw,40px)] text-[#f0ebe0] leading-snug mb-10 italic">
+            <div className="text-accent text-5xl font-['Fraunces'] mb-8 leading-none">"</div>
+            <blockquote className="font-['Fraunces'] font-light text-[clamp(22px,3.5vw,40px)] text-foreground leading-snug mb-10 italic">
               UniX StudioZ didn't just photograph our wedding — they preserved everything we felt. The images are beyond anything we imagined.
             </blockquote>
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] font-['Outfit']">Isabelle & Matthieu — Paris, 2025</div>
+            <div className="text-[10px] tracking-[0.5em] uppercase text-accent font-['Outfit']">Isabelle & Matthieu — Paris, 2025</div>
           </FadeUp>
         </div>
       </section>
@@ -334,24 +319,24 @@ export default function Home() {
       <section className="relative overflow-hidden py-40">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1780542210086-2e273e05d0ac?w=1400&h=700&fit=crop&auto=format"
+            src={HOME_LATEST_IMAGES.cta}
             alt="Studio ambiance"
             className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-[#080808cc]" />
         </div>
         <FadeUp className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 text-center flex flex-col items-center gap-8">
-          <div className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] font-['Outfit']">Limited Availability 2026</div>
-          <h2 className="font-['Fraunces'] font-light text-[clamp(36px,6vw,90px)] leading-none text-[#f0ebe0]">
+          <div className="text-[10px] tracking-[0.5em] uppercase text-accent font-['Outfit']">Limited Availability 2026</div>
+          <h2 className="font-['Fraunces'] font-light text-[clamp(36px,6vw,90px)] leading-none text-foreground">
             Ready to capture<br />
-            <em className="italic text-[#c9a96e]">your story?</em>
+            <em className="italic text-accent">your story?</em>
           </h2>
-          <p className="text-[#7a7267] max-w-md font-['Outfit'] font-light leading-relaxed">
+          <p className="text-muted max-w-md font-['Outfit'] font-light leading-relaxed">
             We accept a curated number of commissions each season. Reach out early to secure your date.
           </p>
           <Link
             to="/contact"
-            className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-10 py-5 bg-[#c9a96e] text-[#080808] hover:bg-[#e8c98a] transition-colors duration-300"
+            className="text-[11px] tracking-[0.3em] uppercase font-['Outfit'] px-10 py-5 bg-accent text-accent-foreground hover:bg-[#e8c98a] transition-colors duration-300"
           >
             Begin Your Journey
           </Link>
